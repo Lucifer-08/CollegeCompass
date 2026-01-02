@@ -52,10 +52,11 @@ export default function Dashboard() {
           <div className="card-icon">📊</div>
           <h3>Skill Chart</h3>
           <p>Visualize your technical strengths and growth.</p>
-
-          <button onClick={handleSkillChart}>
+          <div className="btn-container">
+          <button onClick={handleSkillChart} class="skill-btn">
             {exists ? "View Skill Chart" : "Create Skill Chart"}
-          </button> 
+          </button>
+          </div>
         </div>
       </div>
 

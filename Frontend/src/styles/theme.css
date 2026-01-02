@@ -1,0 +1,15 @@
+:root {
+  --bg-main: #eaedf594;
+  --bg-card: #e5e7f0;
+  --bg-card-bg: #3a4585;
+
+  --text-primary: #142449;
+  --text-secondary: #546985;
+  --text-3rd: #ffffff;
+
+  --primary: #142449;
+  --accent: #22c55e;
+ 
+  --font-primary: 'Montserrat', sans-serif;
+  --border: #052753;
+}

@@ -1,20 +1,14 @@
-/* Profile.css */
-:root {
-  --primary: #4285f4; /* Google Blue */
-  --secondary: #34a853; /* Google Green */
-  --bg-light: #f8f9fa;
-  --text-main: #202124;
-  --text-sub: #5f6368;
-  --border-color: #e0e0e0;
-  --sidebar-width: 250px;
-  --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+body {
+  margin: 0;
+  background: var(--bg-light);
+  font-family: var(--font-primary);
 }
 
 .profile-container {
   display: flex;
   height: 100vh;
   background-color: var(--bg-light);
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Sidebar */
@@ -292,7 +286,7 @@ textarea {
 }
 
 .save-profile-btn:hover {
-  background: #3367d6;
+  background: var(--primary);
 }
 
 .save-profile-btn:disabled {

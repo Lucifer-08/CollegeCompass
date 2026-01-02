@@ -1,12 +1,13 @@
 body{
-  background:#6b6b6b2f;
+  background: var(--bg-main);
+  font-family: var(--font-primary);
 }
 
 .login-container{
   width: 820px;
   min-height: 520px;
   margin: 60px auto;
-  background:white;
+  background: var(--bg-card);
   display:flex;
   border-radius:14px;
   overflow:hidden;
@@ -18,7 +19,7 @@ body{
 /* LEFT PANEL */
 .login-left{
   width:50%;
-  background:#9cc9b5;
+  background: var(--bg-card-bg);
   text-align:center;
   padding:40px 30px;
 }
@@ -93,6 +94,7 @@ body{
   width:100%;
   padding:10px;
   border:none;
+  border-radius: 25px;
   border-bottom:1px solid #ccc;
   outline:none;
   font-size:14px;
@@ -209,7 +211,7 @@ body{
 
 .register-right{
   width:50%;
-  background:#9cc9b5;
+  background: var(--bg-card-bg);
   text-align:center;
   padding:40px 30px;
   display:flex;
