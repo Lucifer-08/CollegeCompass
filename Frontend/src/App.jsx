@@ -6,9 +6,12 @@ import Dashboard from "./pages/DashBoard";
 import SkillAnalysis from "./pages/SkillAnalysis";
 import CreateSkillChart from './pages/CreateSkillChart';
 import SkillChart from './pages/SkillChart';
+import Navbar from "./components/Navbar";
 
 export default function App(){
   return(
+    <>
+    <Navbar/>
     <Routes>
       <Route path="/" element={<Login/>}/>  
       <Route path="/register" element={<Register/>}/>
@@ -18,5 +21,6 @@ export default function App(){
       <Route path="/create-skill-chart" element={<CreateSkillChart />} />
       <Route path="/skill-chart" element={<SkillChart />} />
     </Routes>
+  </>
   )
 }

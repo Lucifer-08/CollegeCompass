@@ -1,0 +1,129 @@
+/* Container that holds the navbar */
+.navbar-container {
+  position: fixed;
+  top: 0; /* Starts at the very top */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 80px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  
+  /* Smooth transition for ALL changes */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 1. The "Hidden" state when scrolling down */
+.navbar-container.hidden {
+  transform: translate(-50%, -100%); /* Slides up out of view */
+  opacity: 0;
+}
+
+/* 2. The "Scrolled" state (Appearance Change) */
+.navbar-container.scrolled {
+  top: 15px; /* Adds a gap at the top to make it look like it's floating */
+  width: 85%; /* Slightly shrinks the width */
+  height: 70px; /* Slimmer height */
+  border-radius: 50px; /* Becomes a full pill shape */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+}
+
+/* Adjust logo/links for the slimmer scrolled height */
+.navbar-container.scrolled .nav-logo {
+  font-size: 20px;
+}
+
+.navbar-container.scrolled .btn-demo {
+  padding: 10px 24px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: #111;
+  text-decoration: none;
+}
+.nav-logo span {
+  color: #4f46e5;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* The Green "See a demo" Button */
+.btn-demo {
+  background-color: #52c41a; /* Bright Green */
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-demo:hover {
+  background-color: #47ab16;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.2);
+}
+
+.btn-demo .arrow {
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+.btn-outline {
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background: transparent;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-outline:hover {    
+  background: #111;
+  color: white;
+}
+
+.welcome {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}

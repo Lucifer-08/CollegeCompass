@@ -40,7 +40,7 @@ export default function RecommendedInternships() {
               </span>
             </div>
 
-            <p className="desc">{job.description}</p>
+            <p className="desc">{job.description?.slice(0,180)}</p>
 
             <div className="skills">
               {job.skills && job.skills.map((s, i)=>(
