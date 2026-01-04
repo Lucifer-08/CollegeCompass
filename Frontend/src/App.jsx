@@ -7,6 +7,7 @@ import SkillAnalysis from "./pages/SkillAnalysis";
 import CreateSkillChart from './pages/CreateSkillChart';
 import SkillChart from './pages/SkillChart';
 import Navbar from "./components/Navbar";
+import AllInternships from "./pages/AllInernship";
 
 export default function App(){
   return(
@@ -20,6 +21,7 @@ export default function App(){
       <Route path="/analysis" element={<SkillAnalysis />} />
       <Route path="/create-skill-chart" element={<CreateSkillChart />} />
       <Route path="/skill-chart" element={<SkillChart />} />
+      <Route path="/internships" element={<AllInternships />} />
     </Routes>
   </>
   )

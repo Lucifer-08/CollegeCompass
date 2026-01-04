@@ -153,3 +153,162 @@
   background: #22c55e;
   font-weight: 800;
 }
+
+.pro-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px;
+  border-radius: 18px;
+  background: white;
+  position: relative;
+}
+
+.left-box {
+  width: 78%;
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.company-name {
+  font-size: 14px;
+  color: #606f7b;
+  margin-bottom: 6px;
+}
+
+.meta {
+  display: flex;
+  gap: 6px;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.meta strong {
+  color: #111;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.view-btn {
+  border: 1.5px solid #0c63e7;
+  background: #eef4ff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background: #ddebff;
+}
+
+.apply-btn {
+  background: #18c44c;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.apply-btn:hover {
+  background: #13a03d;
+}
+
+.right-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.match-tag {
+  margin-top: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background: #e6ffed;
+  color: #19a64a;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+
+/* ========== SKELETON BASE ========== */
+.skeleton-card * {
+  pointer-events: none;
+}
+
+.skeleton-card .sk-title,
+.skeleton-card .sk-company,
+.skeleton-card .sk-meta,
+.skeleton-card .sk-btn,
+.skeleton-card .sk-logo,
+.skeleton-card .sk-badge {
+  background: linear-gradient(90deg, #eeeeee 25%, #f6f6f6 50%, #eeeeee 75%);
+  background-size: 300% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 10px;
+}
+
+/* SHIMMER EFFECT */
+@keyframes shimmer {
+  0% { background-position: -150% 0; }
+  100% { background-position: 150% 0; }
+}
+
+/* Shape match layout */
+.sk-title {
+  width: 60%;
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+.sk-company {
+  width: 40%;
+  height: 16px;
+  margin-bottom: 12px;
+}
+
+.sk-meta {
+  width: 55%;
+  height: 14px;
+  margin-bottom: 6px;
+}
+
+.sk-meta.short {
+  width: 35%;
+}
+
+.sk-btn {
+  width: 110px;
+  height: 32px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.sk-logo {
+  width: 68px;
+  height: 68px;
+  border-radius: 14px;
+}
+
+.sk-badge {
+  width: 80px;
+  height: 25px;
+  margin-top: 10px;
+  border-radius: 20px;
+}

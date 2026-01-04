@@ -59,6 +59,11 @@ const userSchema = new mongoose.Schema({
     appliedAt: { type: Date, default: Date.now }
   }
 ],
+    embedding: {
+    type: Array,
+    default: []
+    },
+
 
 }, { timestamps: true });
 

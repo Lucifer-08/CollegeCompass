@@ -53,7 +53,7 @@ export default function Dashboard() {
           <h3>Skill Chart</h3>
           <p>Visualize your technical strengths and growth.</p>
           <div className="btn-container">
-          <button onClick={handleSkillChart} class="skill-btn">
+          <button onClick={handleSkillChart} className="skill-btn"> 
             {exists ? "View Skill Chart" : "Create Skill Chart"}
           </button>
           </div>

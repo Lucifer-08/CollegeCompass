@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../styles/navbar.css";
 
@@ -13,6 +13,8 @@ export default function Navbar() {
     const stored = localStorage.getItem("user");
     if (stored) setUser(JSON.parse(stored));
   }, [location]);
+
+  const prevScrollPos = useRef(window.scrollY);
 
   useEffect(() => {
     const handleScroll = () => {
