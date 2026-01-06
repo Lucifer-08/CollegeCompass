@@ -1,232 +1,218 @@
-body{
+body {
   background: var(--bg-main);
   font-family: var(--font-primary);
 }
 
-.login-container{
+.login-container {
   width: 820px;
   min-height: 520px;
   margin: 60px auto;
   background: var(--bg-card);
-  display:flex;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 10px 35px rgba(0,0,0,0.25);
+  display: flex;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 
-
-
-/* LEFT PANEL */
-.login-left{
-  width:50%;
-  background: var(--bg-card-bg);
-  text-align:center;
-  padding:40px 30px;
+.login-left {
+  width: 50%;
+  background: var(--primary);
+  text-align: center;
+  padding: 40px 30px;
 }
 
-.illustration{
-  width:220px;
-  margin-top:20px;
+.illustration {
+  width: 220px;
+  margin-top: 20px;
 }
 
-.left-title{
-  color:white;
-  margin-top:25px;
-  font-size:22px;
+.left-title {
+  color: var(--text-inverse);
+  margin-top: 25px;
+  font-size: 22px;
 }
 
-.left-text{
-  color:white;
-  line-height:22px;
-  margin-top:8px;
-  font-size:14px;
+.left-text {
+  color: var(--text-inverse);
+  line-height: 22px;
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
-.dots{
-  margin-top:25px;
+.dots {
+  margin-top: 25px;
 }
 
-.dot{
-  width:10px;
-  height:10px;
-  background:white;
-  border-radius:50%;
-  margin:0 4px;
-  display:inline-block;
-  opacity:0.5;
+.dot {
+  width: 10px;
+  height: 10px;
+  background: var(--text-inverse);
+  border-radius: 50%;
+  margin: 0 4px;
+  display: inline-block;
+  opacity: 0.5;
 }
 
-.dot.active{
-  opacity:1;
+.dot.active {
+  opacity: 1;
+  background-color: var(--accent);
 }
 
-/* RIGHT PANEL */
-.login-right{
-  width:50%;
-  padding:50px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  overflow-y:auto;
+.login-right {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
 }
 
-
-.logo{
-  text-align:center;
-  font-size:26px;
-  margin-bottom:10px;
+.logo {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: var(--primary);
 }
 
-.welcome{
-  text-align:center;
-  margin-bottom:25px;
-  color:#444;
+.welcome {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--text-body);
 }
 
-.input-label{
-  display:block;
-  margin-top:10px;
-  font-size:14px;
-  color:#555;
+.input-label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-body);
 }
 
-.input{
-  width:100%;
-  padding:10px;
-  border:none;
+.input {
+  width: 100%;
+  padding: 10px;
+  border: none;
   border-radius: 25px;
-  border-bottom:1px solid #ccc;
-  outline:none;
-  font-size:14px;
-  margin-bottom:10px;
+  border-bottom: 1px solid var(--border);
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  background: transparent;
+  color: var(--text-primary);
 }
 
-.forgot{
-  text-align:right;
-  margin-top:3px;
+.forgot {
+  text-align: right;
+  margin-top: 3px;
 }
 
-.forgot a{
-  text-decoration:none;
-  font-size:12px;
-  color:#777;
+.forgot a {
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
-.signin-btn{
-  width:100%;
-  padding:10px;
-  margin-top:18px;
-  border:none;
-  border-radius:25px;
-  background:#4b4b4b;
-  color:white;
-  cursor:pointer;
-  font-size:14px;
+.signin-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 25px;
+  background: var(--primary);
+  color: var(--text-inverse);
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.divider{
-  display:flex;
-  align-items:center;
-  margin:18px 0;
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 18px 0;
 }
 
-.divider span{
-  flex:1;
-  height:1px;
-  background:#ddd;
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
 }
 
-.divider p{
-  margin:0 10px;
-  font-size:12px;
-  color:#555;
+.divider p {
+  margin: 0 10px;
+  font-size: 12px;
+  color: var(--text-body);
 }
 
-.google-btn{
-  width:100%;
-  padding:9px;
-  border:1px solid #ccc;
-  border-radius:25px;
-  background:white;
-  cursor:pointer;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
+.google-btn {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  background: var(--bg-card);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
 }
 
-.google-btn img{
-  width:18px;
+.google-btn img {
+  width: 18px;
 }
 
-.create{
-  text-align:center;
-  margin-top:18px;
-  font-size:14px;
+.create {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
 }
 
-.create a{
-  text-decoration:none;
-  color:green;
+.create a {
+  text-decoration: none;
+  color: var(--accent);
 }
 
-.password-wrapper{
-  position:relative;
-  width:100%;
+.password-wrapper {
+  position: relative;
+  width: 100%;
 }
 
-.eye-icon{
-  position:absolute;
-  right:0;
-  top:5px;
-  cursor:pointer;
-  padding:5px;
+.eye-icon {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  cursor: pointer;
+  padding: 5px;
 }
 
-.create{
-  text-align:center;
-  margin-top:18px;
-  font-size:14px;
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-.create a{
-  text-decoration:none;
-  color:green;
-}
-.error-message{
-  color:red;
-  font-size:12px;
-  margin-top:5px;
+.register-left {
+  width: 50%;
+  padding: 40px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* { REGISTER PAGE STYLES } */
-.register-left{
-  width:50%;
-  padding:40px 45px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.register-right {
+  width: 50%;
+  background: var(--primary);
+  text-align: center;
+  padding: 40px 30px;
+  flex-direction: column;
 }
 
-
-.register-right{
-  width:50%;
-  background: var(--bg-card-bg);
-  text-align:center;
-  padding:40px 30px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.register-left .input {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 12px;
 }
 
-
-.register-left .input{
-  width:100%;
-  margin-top:5px;
-  margin-bottom:12px;
-}
-
-.illustration-register{
-  width:220px;
-  margin-top:20px;
+.illustration-register {
+  width: 220px;
+  margin-top: 20px;
 }
