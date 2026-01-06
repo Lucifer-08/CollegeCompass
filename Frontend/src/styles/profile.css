@@ -1,28 +1,27 @@
 body {
   margin: 0;
-  background: var(--bg-light);
+  background: var(--bg-main);
   font-family: var(--font-primary);
 }
 
 .profile-container {
   display: flex;
   height: 100vh;
-  background-color: var(--bg-light);
-  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-main);
+  font-family: var(--font-primary);
 }
 
-/* Sidebar */
 .sidebar {
-  width: var(--sidebar-width);
-  background: white;
-  border-right: 1px solid var(--border-color);
+  width: var(--sidebar-width, 250px);
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
 }
 
 .sidebar-header {
   padding: 20px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border);
 }
 
 .user-info {
@@ -35,7 +34,7 @@ body {
   width: 40px;
   height: 40px;
   background: var(--primary);
-  color: white;
+  color: var(--text-inverse);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -48,10 +47,11 @@ body {
   font-weight: 600;
   margin: 0;
   font-size: 14px;
+  color: var(--text-primary);
 }
 
 .user-email {
-  color: var(--text-sub);
+  color: var(--text-muted);
   margin: 0;
   font-size: 12px;
 }
@@ -70,19 +70,19 @@ body {
   display: block;
   padding: 10px 20px;
   text-decoration: none;
-  color: var(--text-main);
+  color: var(--text-body);
   font-size: 14px;
   border-radius: 0 20px 20px 0;
   transition: background 0.2s;
 }
 
-.sidebar-nav li.active a, .sidebar-nav a:hover {
-  background: #e8f0fe;
+.sidebar-nav li.active a,
+.sidebar-nav a:hover {
+  background: var(--bg-secondary);
   color: var(--primary);
   font-weight: 500;
 }
 
-/* Main Content */
 .main-content {
   flex: 1;
   display: flex;
@@ -91,9 +91,9 @@ body {
 }
 
 .content-header {
-  background: white;
+  background: var(--bg-card);
   padding: 15px 30px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,7 +110,7 @@ body {
   padding: 10px 0;
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-sub);
+  color: var(--text-muted);
   cursor: pointer;
   position: relative;
 }
@@ -132,7 +132,7 @@ body {
 
 .add-new-btn {
   background: var(--primary);
-  color: white;
+  color: var(--text-inverse);
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -149,14 +149,13 @@ body {
 }
 
 .card {
-  background: white;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: var(--card-shadow);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
 }
 
-/* Left Profile Card */
 .profile-card-left {
   display: flex;
   flex-direction: column;
@@ -173,7 +172,7 @@ body {
 .profile-image-placeholder {
   width: 120px;
   height: 120px;
-  background: #e8f0fe;
+  background: var(--bg-secondary);
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -187,13 +186,13 @@ body {
 }
 
 .upload-photo-btn {
-  background: white;
-  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   padding: 8px 16px;
   border-radius: 6px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-main);
+  color: var(--text-primary);
   cursor: pointer;
   width: 100%;
 }
@@ -205,22 +204,21 @@ body {
 }
 
 .change-password-btn {
-  background: white;
-  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   padding: 8px 16px;
   border-radius: 6px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-main);
+  color: var(--text-primary);
   cursor: pointer;
   width: 100%;
 }
 
-/* Right Profile Form Card */
 .section-title {
   font-size: 18px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--text-primary);
   margin-bottom: 25px;
 }
 
@@ -245,19 +243,22 @@ body {
 .input-group label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--text-main);
+  color: var(--text-primary);
 }
 
-.input-group input, .input-group textarea {
+.input-group input,
+.input-group textarea {
   padding: 10px 12px;
   border-radius: 6px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border);
   font-size: 14px;
-  color: var(--text-main);
+  color: var(--text-primary);
   transition: border-color 0.2s;
+  background: var(--bg-card);
 }
 
-.input-group input:focus, .input-group textarea:focus {
+.input-group input:focus,
+.input-group textarea:focus {
   outline: none;
   border-color: var(--primary);
 }
@@ -275,7 +276,7 @@ textarea {
 
 .save-profile-btn {
   background: var(--primary);
-  color: white;
+  color: var(--text-inverse);
   border: none;
   padding: 10px 24px;
   border-radius: 6px;
@@ -287,10 +288,11 @@ textarea {
 
 .save-profile-btn:hover {
   background: var(--primary);
+  opacity: 0.9;
 }
 
 .save-profile-btn:disabled {
-  background: #a0c3ff;
+  background: var(--text-muted);
   cursor: not-allowed;
 }
 
@@ -315,28 +317,29 @@ textarea {
 .pac-container {
   border-radius: 12px;
   margin-top: 5px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border: none;
   font-family: inherit;
+  background: var(--bg-card);
 }
 
 .pac-item {
   padding: 10px;
   cursor: pointer;
+  color: var(--text-body);
 }
 
 .pac-item:hover {
-  background-color: #f1f3f4;
+  background-color: var(--bg-secondary);
 }
 
 .pac-item-query {
   font-size: 14px;
-  color: #202124;
+  color: var(--text-primary);
 }
 
-/* For Branch */
 .branch-container {
-  position: relative; /* Crucial for positioning the dropdown */
+  position: relative;
 }
 
 .custom-autocomplete-dropdown {
@@ -344,10 +347,10 @@ textarea {
   top: 100%;
   left: 0;
   width: 100%;
-  background: white;
-  border: 1px solid #dadce0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   list-style: none;
   padding: 5px 0;
@@ -359,21 +362,19 @@ textarea {
   font-size: 14px;
   cursor: pointer;
   transition: background 0.2s;
-  color: #3c4043;
+  color: var(--text-body);
 }
 
 .custom-autocomplete-dropdown li:hover {
-  background-color: #f1f3f4;
-  color: #1a73e8; /* Google Blue */
+  background-color: var(--bg-secondary);
+  color: var(--accent);
 }
 
-/* Ensure the input highlights when suggestions are open */
 .branch-container input:focus {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-/* Skill Tag */
 .skill-tag-container {
   position: relative;
 }
@@ -383,9 +384,9 @@ textarea {
   flex-wrap: wrap;
   gap: 8px;
   padding: 8px;
-  border: 1.5px solid #dadce0;
+  border: 1.5px solid var(--border);
   border-radius: 12px;
-  background: white;
+  background: var(--bg-card);
   min-height: 48px;
   align-items: center;
 }
@@ -396,8 +397,8 @@ textarea {
 }
 
 .skill-tag {
-  background: #e8f0fe;
-  color: #1967d2;
+  background: var(--bg-secondary);
+  color: var(--accent);
   padding: 4px 10px;
   border-radius: 16px;
   font-size: 13px;
@@ -405,13 +406,13 @@ textarea {
   display: flex;
   align-items: center;
   gap: 6px;
-  border: 1px solid #c2e7ff;
+  border: 1px solid var(--border);
 }
 
 .skill-tag button {
   background: none;
   border: none;
-  color: #1967d2;
+  color: var(--accent);
   font-size: 16px;
   cursor: pointer;
   line-height: 1;
@@ -425,22 +426,23 @@ textarea {
   flex: 1;
   min-width: 120px;
   padding: 4px !important;
+  background: transparent;
+  color: var(--text-primary);
 }
 
-/* Skill Suggestions Dropdown */
 .skill-suggestions-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background: white;
+  background: var(--bg-card);
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   list-style: none;
   padding: 5px 0;
   margin-top: 5px;
-  border: 1px solid #eee;
+  border: 1px solid var(--border);
 }
 
 .skill-suggestions-dropdown li {
@@ -448,9 +450,10 @@ textarea {
   cursor: pointer;
   font-size: 14px;
   transition: background 0.2s;
+  color: var(--text-body);
 }
 
 .skill-suggestions-dropdown li:hover {
-  background: #f1f3f4;
+  background: var(--bg-secondary);
   color: var(--primary);
 }
