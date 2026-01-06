@@ -58,52 +58,59 @@ exports.getProfile = async(req,res)=>{
 
 // AI Recommendation
 // AI Recommendation - Updated for Semantic Skill Objects
-exports.recommend = async (req, res) => {
+exports.getStackAnalysis = async (req, res) => {
   try {
-    const data = req.body;
+    const { email } = req.body;
+    const user = await User.findOne({ email });
 
-    // 1. SAFETY CHECK: If no data was sent, don't crash the server
-    if (!data) return res.status(400).json({ error: "No profile data received" });
-
-    // 2. Format skills safely
-    let skillList = "No skills listed";
-    if (data.skills && Array.isArray(data.skills)) {
-      skillList = data.skills.map(s => `${s.name} (${s.category})`).join(", ");
-    } else if (typeof data.skills === 'string') {
-      skillList = data.skills;
+    if(!user || !user.skills?.length){
+      return res.json({ error: "No skills found" });
     }
 
+    const category = user.branch || "Software Development";
+    const currentSkills = user.skills.map(s => s.name).join(", ");
+
     const prompt = `
-      Analyze this Student Profile:
-      College: ${data.college || "N/A"}
-      Branch: ${data.branch || "N/A"}
-      Skills: ${skillList}
+      As a Technical Architect, analyze the "${category}" career path.
+      The user currently knows: ${currentSkills}.
       
-      Provide response in STRICT JSON:
+      Tasks:
+      1️⃣ Define the COMPLETE industry-standard stack.
+      2️⃣ Identify EXACT missing technologies.
+      3️⃣ Give a Completion Percentage.
+
+      Return ONLY JSON:
       {
-        "internships": "Top 3 roles",
-        "skills": "Gap analysis",
-        "roadmap": "3 month plan"
+        "fullStack": ["React","Node.js","Express","MongoDB"],
+        "missing": [
+          {"name":"Node.js","reason":"Required for backend APIs"}
+        ],
+        "completionScore": 65
       }
     `;
 
-    // 3. CALL GEMINI (Using the 2.0-flash model we fixed earlier)
     const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_KEY}`,
-      { contents: [{ parts: [{ text: prompt }] }] }
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.GEMINI_KEY}`,
+      {
+        contents: [
+          {
+            parts: [{ text: prompt }]
+          }
+        ]
+      }
     );
 
-    const aiText = response.data.candidates[0].content.parts[0].text;
-    const cleanJson = aiText.replace(/```json|```/g, "").trim();
-    
-    res.json(JSON.parse(cleanJson));
+    const text = response.data.candidates[0].content.parts[0].text;
+    const clean = text.replace(/```json|```/g, "");
+    const result = JSON.parse(clean);
+
+    res.json(result);
 
   } catch (err) {
-    console.error("AI Error:", err.response?.data || err.message);
-    res.status(500).json({ error: "AI failed to respond" });
+    console.log("STACK GAP ERROR:", err.response?.data || err.message);
+    res.status(500).json({ error: "Stack analysis failed" });
   }
 };
-
 
 exports.hasSkillChart = async(req,res)=>{
   const { email } = req.body;

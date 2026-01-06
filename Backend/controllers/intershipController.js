@@ -31,7 +31,7 @@ async function aiMatch(userVector, job) {
     const score = cosineSimilarity(userVector, jobVector);
     return Math.round(score * 100);
   } catch (err) {
-    console.error(`Error matching job ${job.job_id}:`, err.message);
+    console.log("AI Match Error:");
     return 0; // Fallback score
   }
 }

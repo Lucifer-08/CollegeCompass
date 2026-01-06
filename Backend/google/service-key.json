@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "college-campus-482711",
+  "private_key_id": "73abe915fe99c60bf4cd63adb64115f1eedf479c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+FWmKVM96AxsI\ndTWWbsR4KupTG2m1EoTvkuO4mg0tNWnZWRO2u84/i4mHb58Wqld8bi1oI40e6c+f\nIkhSeCsFxad1/CrTVr3tsVpIBw/BvffnvHwk9qqf64ZO0BQeXjCNY+gkpOw3O0Px\nfIDXQ4ID4WP4y/qXaA9/9mRUjhzbgJj4nX0gGy71jJND+ZXozv1+Zf/znYgSZaZG\nGojVmHvyLMl1/iSxzpNhQToQHwAP9gz8LfSJO1Gx14PXvC4p+yTvGL5ot+bm11gg\nQfdzPZb1lJpmEK6Zeqb57VssInxpjOBIAvAJwjdVkOXF5ZTsu13rge85h2vDIqPf\nMpZUR5UdAgMBAAECggEAA7q8JzR9HPSPpLhWqfzCtRAz0xfwGIHkWCZRJSTnSked\n1opatSn1JNEHjJU3kVnGkqXqFSd8FCsGjFA/YVgt5pSXXFzAuFnKKy42H8Cnt1I+\nBBlyHsWKLni6r17XbjXEjRmfNeIt0khC5SuKBESKT1TY7HTla0Vlkcn985zAMIb0\n5ExZM2ogOFF92/jDX8AW9qU9VsR2tJ2gx/pMpt588uKMgGIPGhgEIINpMevqNcv2\nFRkQujKeIxmcdCCkMEQJX3+DgFjFUczoQZFY3OJfYZX8jz1DpN8XTwBlvwQvsmGD\nKOqUqajaqAdYJLZAUJKCYtrrIXvC5QNLfwC0GDlq0QKBgQDnLUQ0UOdj/EXHZQBt\nyn7fsQAGdI9S/4gtYhhWNMmW0RTviX3lbplVYF4ZvDuWGpxNLuPeePK/+6NLntAu\nh4lB4fWeZGxyUW83tVrxKLlsS4qXNiB06CSsY8ln2MjYGPUl/J2m/eWeOV5s8ZJj\nSSTZw98FWwM8bL6UUcw76jpGiQKBgQDSfoz7edN4ufTEnISvXbKw6w5PgMD/eAEQ\nYQ5RDkgDSK4OXXlZJbgAi1k/DfOlnGNt5YyeMMyzNyqnCUlgYP+Dg1q9B3WQRslO\nR731fPB8kOFV3YQTLKj/ciFHoBSloPOI1Y0fDmnTGkW/7W5/Wn1W2uRRe7i0C2UN\n7vtayyx09QKBgQDTTaXc5+JImusxEVnuALwtPL0YKWxj4duYF+TEzyU/7EZlmFfx\n4UDYL+hzP4F7d0FMr0JrNEQ2RQ0Cbtw823gTNzVpnMMfTt4InoTMj3vEx9ua0Uej\ndBkpVWBfwl/6Xf2dxiRX4hUCpc9wZvJ2PAIp5gYw//qaPY+JRKcYUMUJeQKBgDLX\n6onbtV7V2++Zttr9EOp2/G/rs7KBdBBWwTSG9JIGfjRuE5+a4sUO47G9VvrLuaCT\n79FODEPFsYHDVnv3MgC8O7CpGpaM4pcL8TBYy2XrQOKSrRJMmU2Kbct1OUeAhxKo\nMnwr6RfaorpnSWdtnhTaroeYENc8YV5qOUCHDuf5AoGAdbwXWQCc7ro4eA4uLubZ\nY0mHr7gzqAObSuliG9Rrw//B+8/AdV3GWcQuLo13o3N+TwmYY/Ct/lk8+H2s8zbs\nc1Mesr2enVhVQLgIoejYoiQKMXCDit0VUr9rlEssZWz4FeXG6iLVCvLqv/4ieGPR\n95JrEEdKk6KjlZ3qpIFOjxw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "collegecompass-ai@college-campus-482711.iam.gserviceaccount.com",
+  "client_id": "112662572676703025808",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/collegecompass-ai%40college-campus-482711.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
