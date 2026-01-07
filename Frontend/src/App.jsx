@@ -10,6 +10,7 @@ import AllInternships from "./pages/AllInernship";
 import InternshipDetails from "./pages/InernshipDetails";
 import SkillGap from "./pages/SkillGap";
 import SkillRoadmap from "./pages/SkillRoadmap";
+import SkillInterview from "./pages/SkillInterview";
 
 export default function App(){
   return(
@@ -26,6 +27,7 @@ export default function App(){
       <Route path="/internship/details" element={<InternshipDetails />} />
       <Route path="/skill-gap" element={<SkillGap />} />
       <Route path="/roadmap" element={<SkillRoadmap />} />
+      <Route path="/ai-interview" element={<SkillInterview />} />
     </Routes>
   </>
   )

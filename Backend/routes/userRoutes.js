@@ -4,6 +4,7 @@ const {hasSkillChart,saveSkillChart,getSkillChart} = require("../controllers/ski
 const { getRecommendedInternships } = require("../controllers/intershipController");
 const { skillGap } = require("../controllers/skillGapController");
 const { getSkillRoadmap } = require("../controllers/roadMapController");
+const { startInterview, evaluateInterview , finishInterview } = require("../controllers/interviewController");
 const router = express.Router();
 
 router.post("/register",register);
@@ -17,6 +18,9 @@ router.post("/recommended-internships", getRecommendedInternships);
 router.post("/skill-gap", skillGap); 
 router.post("/stack-analysis", getStackAnalysis);
 router.post("/skill-roadmap", getSkillRoadmap);
+router.post("/start-interview", startInterview);
+router.post("/evaluate-interview", evaluateInterview);
+router.post("/finish-interview", finishInterview);
 
 
 module.exports = router;
