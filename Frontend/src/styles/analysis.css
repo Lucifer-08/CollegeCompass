@@ -2,7 +2,7 @@
   max-width: 1000px;
   margin: 50px auto;
   padding: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary);
 }
 
 .analysis-header {
@@ -10,26 +10,27 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
-  border-bottom: 2px solid #f1f5f9;
+  border-bottom: 2px solid var(--border);
   padding-bottom: 20px;
 }
 
 .analyze-btn {
-  background: #fcd34d;
+  background: var(--accent);
   border: none;
   padding: 12px 24px;
   border-radius: 12px;
   font-weight: 700;
   cursor: pointer;
+  color: var(--text-inverse);
 }
 
 .gap-card {
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   padding: 20px;
   border-radius: 16px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .tag {
@@ -44,9 +45,9 @@
 .medium { background: #fef3c7; color: #d97706; }
 
 .roadmap-box {
-  background: #f8fafc;
+  background: var(--bg-secondary);
   padding: 25px;
   border-radius: 20px;
   line-height: 1.8;
-  color: #334155;
+  color: var(--text-body);
 }
