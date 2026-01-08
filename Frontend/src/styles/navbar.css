@@ -1,13 +1,12 @@
-/* Container that holds the navbar */
 .navbar-container {
   position: fixed;
-  top: 0; /* Starts at the very top */
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
   max-width: 1200px;
   height: 80px;
-  background: white;
+  background: var(--bg-card);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,29 +15,24 @@
   border-bottom-right-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   z-index: 1000;
-  
-  /* Smooth transition for ALL changes */
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* 1. The "Hidden" state when scrolling down */
 .navbar-container.hidden {
-  transform: translate(-50%, -100%); /* Slides up out of view */
+  transform: translate(-50%, -100%);
   opacity: 0;
 }
 
-/* 2. The "Scrolled" state (Appearance Change) */
 .navbar-container.scrolled {
-  top: 15px; /* Adds a gap at the top to make it look like it's floating */
-  width: 85%; /* Slightly shrinks the width */
-  height: 70px; /* Slimmer height */
-  border-radius: 50px; /* Becomes a full pill shape */
+  top: 15px;
+  width: 85%;
+  height: 70px;
+  border-radius: 50px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.95); /* Slight transparency */
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
 }
 
-/* Adjust logo/links for the slimmer scrolled height */
 .navbar-container.scrolled .nav-logo {
   font-size: 20px;
 }
@@ -55,7 +49,7 @@
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: var(--text-body);
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
@@ -63,17 +57,18 @@
 }
 
 .nav-link:hover {
-  color: #000;
+  color: var(--text-primary);
 }
 
 .nav-logo {
   font-size: 22px;
   font-weight: 900;
-  color: #111;
+  color: var(--text-primary);
   text-decoration: none;
 }
+
 .nav-logo span {
-  color: #4f46e5;
+  color: var(--accent);
 }
 
 .nav-right {
@@ -82,10 +77,9 @@
   gap: 30px;
 }
 
-/* The Green "See a demo" Button */
 .btn-demo {
-  background-color: #52c41a; /* Bright Green */
-  color: white;
+  background-color: var(--primary);
+  color: var(--text-inverse);
   text-decoration: none;
   padding: 12px 28px;
   border-radius: 12px;
@@ -98,9 +92,9 @@
 }
 
 .btn-demo:hover {
-  background-color: #47ab16;
+  background-color: var(--primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.2);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
 }
 
 .btn-demo .arrow {
@@ -111,19 +105,20 @@
 .btn-outline {
   padding: 8px 15px;
   border-radius: 10px;
-  border: 1px solid #444;
+  border: 1px solid var(--text-body);
   background: transparent;
   cursor: pointer;
   transition: .2s;
 }
 
-.btn-outline:hover {    
-  background: #111;
-  color: white;
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border-color: var(--primary);
 }
 
 .welcome {
   font-size: 15px;
   font-weight: 500;
-  color: #333;
+  color: var(--text-body);
 }
