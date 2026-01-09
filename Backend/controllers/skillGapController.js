@@ -1,24 +1,38 @@
 const User = require("../models/User");
 const analyzeSkillGap = require("../google/vertexSkillGap");
 
-exports.skillGap = async (req, res) => {
+exports.getSkillGap = async (req, res) => {
   try {
     const { email } = req.body;
-
     const user = await User.findOne({ email });
 
-    if (!user || !user.skills?.length)
-      return res.json({ error: "User has no skills saved" });
+    if (!user) return res.status(404).json({ error: "User not found" });
+    
+    const categories = user.branch || ["Software Engineering"];
+    const skills = user.skills ? user.skills.map(s => s.name) : []; 
+    // ✅ RETURN CACHED RESULT
+    if (
+      user.skillGapCache &&
+      Date.now() - new Date(user.skillGapCache.generatedAt).getTime() <
+        7 * 24 * 60 * 60 * 1000
+    ) {
+      return res.json(user.skillGapCache);
+    }
 
-    const category = user.branch || "Software Development";
-    const skills = user.skills.map(s => s.name);
+    // 👉 CALL VERTEX / GEMINI HERE (your existing code)
+    const aiResult = await analyzeSkillGap(categories, skills);
 
-    const result = await analyzeSkillGap(category, skills);
+    user.skillGapCache = {
+      ...aiResult,
+      generatedAt: new Date()
+    };
 
-    res.json(result);
-  
+    await user.save();
+
+    res.json(user.skillGapCache);
   } catch (err) {
-    console.log("VERTEX ERROR:", err.message);
+    console.error("STACK GAP ERROR:", err.message);
     res.status(500).json({ error: "Skill gap failed" });
   }
 };
+

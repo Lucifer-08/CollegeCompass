@@ -13,6 +13,7 @@ export default function SkillGap() {
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [roadmapProgress, setRoadmapProgress] = useState({});
 
   useEffect(() => {
     axios.post("http://localhost:5000/api/user/skill-gap",
@@ -21,7 +22,21 @@ export default function SkillGap() {
       setData(res.data);
       setLoading(false);
     }).catch(() => setLoading(false));
-  }, []);
+
+    axios.post("http://localhost:5000/api/user/roadmap-progress-all", { email: user.email })
+      .then(res => {
+        setRoadmapProgress(res.data); // This should be an object like: { "React": 40, "Node": 10 }
+      }).catch(err => console.log("Progress fetch error:", err));
+}, []);
+
+  // useEffect(() => {
+  //   axios.post("http://localhost:5000/api/user/roadmap-progress",
+  //     { email: user.email }
+  //   ).then(res => {
+  //     setData(res.data);
+  //     setLoading(false);
+  //   }).catch(() => setLoading(false));
+  // }, []);
 
   if (loading) {
     return (
@@ -85,15 +100,29 @@ export default function SkillGap() {
             <p className="success">🎉 You have a complete stack!</p>
           )}
 
-          {data.missing.map((m,i)=>(
-            <div key={i} className="missing-card">
-              <strong onClick={() => navigate("/roadmap",{ state:{ skill:m.name } })}>{m.name}</strong>
-              <p>{m.reason}</p>
-            </div>
-          ))}
-        </div>
+          {data.missing.map((m,i)=>{
 
+            const skillProgress = roadmapProgress[m.name] || 0;
+            return (
+            <div key={i} className="missing-card">
+              <div className="gap-card" onClick={() =>
+                navigate("/roadmap", { state: { skill: m.name } })
+              }>
+                <h3>{m.name}</h3>
+                <p>{m.reason}</p>
+
+                <div className="gap-progress">
+                  <div className="bar">
+                    <div style={{ width: `${skillProgress}%` }} />
+                  </div>
+                  <span>{skillProgress}% learned</span>
+                </div>
+              </div>
+            </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </div>   
   );
 }

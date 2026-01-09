@@ -1,59 +1,38 @@
-const { VertexAI } = require("@google-cloud/vertexai");
+const User = require("../models/User");
+const generateRoadmap = require("../google/vertexSkillGap");
 
-const vertex = new VertexAI({
-  project: process.env.GOOGLE_PROJECT_ID,
-  location: "us-central1",
-  keyFilename: "./google/service-key.json"
-});
-
-const model = vertex.getGenerativeModel({
-  model: "gemini-2.0-flash"
-});
-
-exports.getSkillRoadmap = async (req, res) => {
+exports.createRoadmap = async (req, res) => {
   try {
-    const { skill, userProfile } = req.body;
+    const { email, skill } = req.body;
+    const user = await User.findOne({ email });
 
-    const prompt = `
-You are an expert career mentor.
-Create a COMPLETE learning roadmap for: ${skill}
+    if (!user) return res.status(404).json({ error: "User not found" });
 
-User Details:
-Branch: ${userProfile.branch || "Unknown"}
-Current Skills: ${userProfile.skills?.map(s=>s.name).join(", ") || "None"}
-Interest: ${userProfile.interests || "General Tech"}
+    const safeSkillKey = skill.replace(/\./g, "_");
 
-Return only JSON:
-{
- "why_important": "",
- "time_required": "",
- "difficulty": "",
- "learning_path": {
-    "beginner": ["step1","step2"],
-    "intermediate": ["step1","step2"],
-    "advanced": ["step1","step2"]
-  },
-  "projects": ["p1","p2","p3"],
-  "recommended_resources": {
-    "youtube": ["",""],
-    "courses": ["",""],
-    "documentation": ["",""]
-  },
-  "extra_tips": ""
-}
-`;
+    // ✅ Ensure maps exist
+    if (!user.roadmaps) user.roadmaps = new Map();
+    if (!user.roadmapProgress) user.roadmapProgress = new Map();
 
-    const result = await model.generateContent({
-      contents: [{ role: "user", parts: [{ text: prompt }] }]
+    // ✅ Return cached roadmap
+    if (user.roadmaps.has(safeSkillKey)) {
+      return res.json(user.roadmaps.get(safeSkillKey ));
+    }
+
+    // 👉 Generate roadmap using Gemini / Vertex
+    const roadmap = await generateRoadmap(skill, user);
+
+    user.roadmaps.set(safeSkillKey, roadmap);
+    user.roadmapProgress.set(safeSkillKey, {
+      completedSteps: [],
+      progress: 0
     });
 
-    const text = result.response.candidates[0].content.parts[0].text;
-    const json = JSON.parse(text.replace(/```json|```/g, "").trim());
+    await user.save();
 
-    res.json(json);
-
+    res.json(roadmap);
   } catch (err) {
     console.log("ROADMAP ERROR:", err.message);
-    res.status(500).json({ error: "Failed to generate roadmap" });
+    res.status(500).json({ error: "Roadmap failed" });
   }
 };

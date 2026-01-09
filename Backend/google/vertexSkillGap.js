@@ -12,9 +12,12 @@ const model = vertex.getGenerativeModel({
 
 
 async function analyzeSkillGap(category, skills) {
+
+  const skillList = Array.isArray(skills) ? skills.join(", ") : "None";
+
   const prompt = `
 User Career: ${category}
-User Skills: ${skills.join(", ")}
+User Skills: ${skillList}
 
 1. Identify the complete professional TECHNICAL stack (Hard Skills only) for this career.
 2. DO NOT include soft skills, management skills, or personal traits (e.g., leadership, communication, time management).
