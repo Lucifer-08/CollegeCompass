@@ -1,44 +1,34 @@
-/* =============================
-   MODERN SKILL ROADMAP UI
-   ============================= */
-
-:root {
-  --primary: #4f46e5;
-  --success: #22c55e;
-  --info: #3b82f6;
-  --danger: #ef4444;
-  --dark: #0f172a;
-  --muted: #6b7280;
-  --bg: #f8fafc;
-}
-
 body {
-  background: var(--bg);
+  background: var(--bg-main);
 }
 
-/* MAIN CONTAINER */
 .roadmap-container {
   max-width: 1280px;
   margin-top: 50px;
   padding: 50px 20px 80px;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-primary);
 }
 
-/* BACK BUTTON */
 .back-btn {
   position: absolute;
   left: 24px;
   margin-top: 85px;
   top: 20px;
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   padding: 8px 14px;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 500;
+  color: var(--text-body);
+  transition: all 0.2s;
 }
 
-/* HEADER */
+.back-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
 .roadmap-header {
   text-align: center;
   margin-bottom: 50px;
@@ -47,16 +37,15 @@ body {
 .roadmap-header h1 {
   font-size: 38px;
   font-weight: 800;
-  color: var(--dark);
+  color: var(--text-primary);
 }
 
 .subtitle {
   margin-top: 8px;
   font-size: 15px;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
-/* OVERVIEW SECTION */
 .overview-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -64,35 +53,35 @@ body {
 }
 
 .overview-card {
-  background: white;
+  background: var(--bg-card);
   border-radius: 18px;
   padding: 26px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
 }
 
 .overview-card h3 {
   font-size: 18px;
   margin-bottom: 10px;
+  color: var(--text-primary);
 }
 
 .overview-card p {
   font-size: 14px;
-  color: var(--muted);
+  color: var(--text-body);
   line-height: 1.7;
 }
 
-/* SECTION TITLES */
 .section-title {
   margin: 70px 0 30px;
   font-size: 26px;
   font-weight: 700;
-  color: var(--dark);
+  color: var(--text-primary);
 }
 
-/* LEARNING PATH */
 .path-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* HORIZONTAL */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   align-items: stretch;
 }
@@ -104,11 +93,12 @@ body {
 }
 
 .path-card {
-  background: white;
+  background: var(--bg-card);
   border-radius: 22px;
   padding: 28px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-card);
   transition: transform .25s ease, box-shadow .25s ease;
+  border: 1px solid var(--border);
 }
 
 .path-card:hover {
@@ -119,10 +109,12 @@ body {
 .path-card h3 {
   font-size: 20px;
   margin-bottom: 16px;
+  color: var(--text-primary);
 }
 
 .path-card ul {
   padding-left: 18px;
+  color: var(--text-body);
 }
 
 .path-card li {
@@ -132,18 +124,17 @@ body {
 }
 
 .path-card.beginner {
-  border-top: 6px solid var(--success);
+  border-top: 6px solid #22c55e;
 }
 
 .path-card.intermediate {
-  border-top: 6px solid var(--info);
+  border-top: 6px solid #3b82f6;
 }
 
 .path-card.advanced {
-  border-top: 6px solid var(--danger);
+  border-top: 6px solid #ef4444;
 }
 
-/* PROJECTS */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -151,11 +142,11 @@ body {
 }
 
 .project-card {
-  background: linear-gradient(135deg, #111827, #1f2937);
-  color: white;
+  background: linear-gradient(135deg, var(--primary), #0f172a);
+  color: var(--text-inverse);
   padding: 24px;
   border-radius: 20px;
-  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+  box-shadow: var(--shadow-card);
 }
 
 .project-card h4 {
@@ -168,7 +159,6 @@ body {
   opacity: 0.85;
 }
 
-/* RESOURCES */
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -176,33 +166,36 @@ body {
 }
 
 .resource-card {
-  background: white;
+  background: var(--bg-card);
   padding: 24px;
   border-radius: 18px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
 }
 
 .resource-card h4 {
   margin-bottom: 12px;
+  color: var(--text-primary);
 }
 
 .resource-card a {
   display: block;
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: none;
   font-size: 14px;
   margin-bottom: 6px;
+  font-weight: 500;
 }
 
 .resource-card a:hover {
   text-decoration: underline;
+  color: var(--accent-hover);
 }
 
-/* PRO TIPS */
 .tips-box {
   margin-top: 80px;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: var(--text-inverse);
   padding: 36px;
   border-radius: 26px;
 }
@@ -217,28 +210,15 @@ body {
   opacity: 0.95;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .roadmap-header h1 {
     font-size: 28px;
   }
-
   .section-title {
     font-size: 22px;
   }
 }
 
-.resource-card a {
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.resource-card a:hover {
-  text-decoration: underline;
-}
-
-/* SKELETON BASE */
 .roadmap-skeleton {
   padding: 40px;
 }
@@ -247,7 +227,7 @@ body {
   height: 32px;
   width: 40%;
   border-radius: 10px;
-  background: #e5e7eb;
+  background: var(--bg-secondary);
   margin-bottom: 12px;
 }
 
@@ -255,11 +235,10 @@ body {
   height: 18px;
   width: 60%;
   border-radius: 10px;
-  background: #e5e7eb;
+  background: var(--bg-secondary);
   margin-bottom: 30px;
 }
 
-/* OVERVIEW */
 .sk-overview {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -270,10 +249,9 @@ body {
 .sk-box {
   height: 140px;
   border-radius: 18px;
-  background: #e5e7eb;
+  background: var(--bg-secondary);
 }
 
-/* TIMELINE */
 .sk-timeline {
   display: flex;
   gap: 20px;
@@ -284,10 +262,9 @@ body {
   min-width: 320px;
   height: 260px;
   border-radius: 18px;
-  background: #e5e7eb;
+  background: var(--bg-secondary);
 }
 
-/* PROJECTS */
 .sk-projects {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -298,10 +275,9 @@ body {
 .sk-project {
   height: 120px;
   border-radius: 16px;
-  background: #e5e7eb;
+  background: var(--bg-secondary);
 }
 
-/* RESOURCES */
 .sk-resources {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -311,10 +287,9 @@ body {
 .sk-resource {
   height: 100px;
   border-radius: 16px;
-  background: #e5e7eb;
+  background: var(--bg-secondary);
 }
 
-/* SHIMMER */
 .roadmap-skeleton div {
   position: relative;
   overflow: hidden;
