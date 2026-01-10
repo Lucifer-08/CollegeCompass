@@ -1,5 +1,22 @@
 const mongoose = require('mongoose');
 
+const videoSchema = new mongoose.Schema({
+  videoId: String,
+  title: String,
+  completed: { type: Boolean, default: false }
+});
+
+const playlistSchema = new mongoose.Schema({
+  level: String,
+  playlistId: String,
+  videos: [videoSchema]
+});
+
+const roadmapSchema = new mongoose.Schema({
+  skill: String,
+  playlists: [playlistSchema]
+});
+
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -63,6 +80,35 @@ const userSchema = new mongoose.Schema({
     type: Array,
     default: []
     },
+
+    skillGapCache: {
+        fullStack: [String],
+        missing: [
+            {
+            name: String,
+            reason: String,
+            progress: { type: Number, default: 0 }
+            }
+        ],
+        completionScore: Number,
+        generatedAt: Date
+    },
+    
+    roadmapProgress: {
+    type: Map,
+    of: new mongoose.Schema({
+        completedSteps: [String],
+        progress: {type: Number, default: 0}
+    }),
+    default: {}
+    },
+
+    roadmaps : {
+        type : Map, 
+        of : roadmapSchema,
+        default: {}
+    },
+
 
 
 }, { timestamps: true });

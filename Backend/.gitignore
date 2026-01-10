@@ -2,3 +2,4 @@
 /node_modules
 /cloud-run-internship/node_modules
 .gcloudignore
+/google/service-key.json

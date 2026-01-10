@@ -35,16 +35,16 @@ export default function Dashboard() {
 
       <div className="dashboard-grid">
 
-        <div className="card" onClick={() => navigate('/analysis')}>
+        <div className="card" onClick={() => navigate('/skill-gap')}>
           <div className="card-icon">🚀</div>
           <h3>Skill Gap</h3>
           <p>Our AI is analyzing your profile to identify missing skills.</p>
         </div>
 
-        <div className="card">
+        <div className="card" onClick={()=>navigate('/ai-interview')}>
           <div className="card-icon">🗺️</div>
-          <h3>Roadmap</h3>
-          <p>Coming soon based on your saved profile data.</p>
+          <h3>Skill Interview</h3>
+          <p>Practice your skills with AI-powered mock interviews.</p>
         </div>
 
           {/* Technical Skills Card */} 
