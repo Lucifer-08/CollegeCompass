@@ -1,89 +1,91 @@
-.skill-page{
-  width:100%;
-  min-height:100vh;
-  background:#eef2f3;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.skill-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.skill-box{
-  width:850px;
-  background:white;
-  border-radius:20px;
-  padding:30px 40px;
-  box-shadow:0 20px 40px rgba(0,0,0,.15);
+.skill-box {
+  width: 850px;
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: var(--shadow-card);
 }
 
-.title{
-  text-align:center;
-  font-size:28px;
-  margin-bottom:5px;
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: var(--text-primary);
 }
 
-.subtitle{
-  text-align:center;
-  color:#555;
-  margin-bottom:25px;
+.subtitle {
+  text-align: center;
+  color: var(--text-body);
+  margin-bottom: 25px;
 }
 
-.skills-list{
-  margin-top:15px;
+.skills-list {
+  margin-top: 15px;
 }
 
-.skill-card{
-  background:#f8fafc;
-  border-radius:16px;
-  padding:15px 20px;
-  margin-bottom:18px;
-  border:1px solid #e5e7eb;
-  transition:.2s;
+.skill-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 15px 20px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  transition: .2s;
 }
 
-.skill-card:hover{
-  transform:translateY(-3px);
+.skill-card:hover {
+  transform: translateY(-3px);
 }
 
-.skill-title{
-  font-size:18px;
-  font-weight:700;
-  margin-bottom:10px;
+.skill-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
 }
 
-.level-row{
-  display:flex;
-  align-items:center;
+.level-row {
+  display: flex;
+  align-items: center;
 }
 
-.dot{
-  width:18px;
-  height:18px;
-  margin-right:8px;
-  border-radius:50%;
-  background:#d1d5db;
-  cursor:pointer;
-  transition:.25s;
+.dot {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+  transition: .25s;
 }
 
-.dot.active{
-  background:#4ade80;
-  transform:scale(1.2);
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.2);
 }
 
-.level-text{
-  margin-top:6px;
-  font-size:14px;
-  color:#555;
+.level-text {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
-.save-btn{
-  width:100%;
-  margin-top:20px;
-  padding:12px;
-  border:none;
-  border-radius:30px;
-  background:#111827;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
+.save-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: var(--primary);
+  color: var(--text-inverse);
+  font-size: 16px;
+  cursor: pointer;
 }
